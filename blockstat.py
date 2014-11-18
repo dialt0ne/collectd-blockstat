@@ -109,8 +109,8 @@ def blockstat_read(data=None):
                     delta = 4294967296 - previous_value + value
                 else:
                     delta = value - previous_value
-                # field 9 is not a counter
-                if i == 9:
+                # field 8 is not a counter
+                if i == 8:
                     delta = value
                 # record the new previous value
                 previous_values[device][i] = value
