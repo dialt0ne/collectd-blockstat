@@ -1,8 +1,6 @@
-collectd-blockstat
-==================
+## collectd-blockstat
 
-Overview:
----------
+### Overview:
 
 collectd-blockstat is a collectd plugin (written in Python) that reads the
 Linux 2.6 /sys/block/<device>/stat "file" and records detailed device
@@ -20,8 +18,15 @@ by defining "Device" parameters inside the <Module> block for blockstat.
 One "Device" parameter per device. To see which devices are available, just
 `ls -1 /sys/block/*/stat`.
 
-Example configuration:
-----------------------
+The plugin produces data for the "blockstat" plugin. The plugin instance
+will be the device name. The plugin will write gauge data for 11 types.
+
+The Linux kernel source code tree documentation 
+[Documentation/block/stat.txt](https://www.kernel.org/doc/Documentation/block/stat.txt)
+describes the fields in /sys/block/<device>/stat and can help you make sense
+of the data.
+
+### Example configuration:
 
 ```
   <Plugin python>
@@ -35,21 +40,13 @@ Example configuration:
   </Plugin>
 ```
 
-The plugin produces data for the "blockstat" plugin. The plugin instance
-will be the device name. The plugin will write gauge data for 11 types.
-
-The Linux kernel source code tree documentation 
-[Documentation/block/stat.txt](https://www.kernel.org/doc/Documentation/block/stat.txt)
-describes the fields in /sys/block/<device>/stat and can help you make sense
-of the data.
-
----
+### Thanks:
 
 Many thanks to Gregory Szorc for his
 [collectd-diskstats](https://github.com/indygreg/collectd-diskstats)
 plugin for which this is based
 
----
+### License:
 
 Copyright 2014 Anthony Tonns
 
@@ -64,3 +61,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
