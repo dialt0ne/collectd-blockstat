@@ -44,7 +44,7 @@ of the data.
 
 Many thanks to Gregory Szorc for his
 [collectd-diskstats](https://github.com/indygreg/collectd-diskstats)
-plugin for which this is based
+plugin on which this is based
 
 ### License:
 
