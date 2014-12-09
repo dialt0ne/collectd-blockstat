@@ -68,6 +68,9 @@ def blockstat_config(c):
             for v in child.values:
                 if v not in devices:
                     devices.append(v)
+                    collectd.info(
+                        'collecting blockstat for: %s' % v
+                    )
                     if v not in previous_values:
                         previous_values[v] = {}
 
